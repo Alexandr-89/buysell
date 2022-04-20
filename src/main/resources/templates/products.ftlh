@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>BUYSELF</title>
+    <title>BUYSELL</title>
 </head>
 <body>
-<h1>BUYSELF</h1>
-<hr>Товары со всей Беларуси</h4>
+<h1>BUYSELL</h1>
+<hr>Товары со всей Беларуси</h4><br>
+<form action="/" method="get">
+    Поиск по названию объявления: <input type="text" name="title"><br>
+    <input type="submit" value="Поиск"/>
+    </form>
 <#list products as product>
-<div>
+    <div>
     <p><b>${product.title}</b> ${product.price} руб. | <a href="/product/${product.id}">Подробнее...</a></p>
-</div>
+    </div>
+    <#else>
+    <h3>Товаров нет</h3>
 </#list>
 <hr>
 <h3>Создать новый товар</h3>
